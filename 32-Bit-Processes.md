@@ -23,7 +23,7 @@ When you run an application on your PC, it gets allocated a portion of this phys
 #### 📲 SO?
 In the context of a 32-bit process, we're primarily discussing application memory addressing. A 32-bit process can only access up to 4 gigabytes of memory, regardless of how much physical memory (RAM) your PC has. This limitation is due to the 32-bit memory addressing scheme used by the process. However, the PC itself may have more physical memory, but each individual 32-bit process is limited to addressing only 4 gigabytes of it at a time.
 
-## The memory allocated to the application is it dependent on the how much the application needs, or are all applications given the same memory allocation?
+## Does the memory allocated to an application depend on the how much the application needs, or are all applications given the same memory allocation?
 
 *_Short answer: Applications are not typically given a fixed, uniform memory allocation; rather, the operating system dynamically manages memory allocation based on various factors.*_
 
