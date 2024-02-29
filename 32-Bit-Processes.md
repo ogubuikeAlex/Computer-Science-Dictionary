@@ -9,3 +9,13 @@ Now, when we say a process is 32-bit, it means that it can only utilize these 32
 On the other hand, a 64-bit process operates within a 64-bit memory addressing scheme, allowing it to access a significantly larger amount of memory, up to 2^64 addresses (which is a massive amount, virtually unlimited for current practical purposes). This makes 64-bit processes more suitable for handling large datasets and performing memory-intensive tasks efficiently.
 
 To sum up, when you encounter the term "32-bit process," it refers to an application or program that can only access up to 4 gigabytes of memory due to its use of a 32-bit memory addressing scheme.
+
+## When we talk about memory addressing does it relate to applications that run on my pc or the pc itself?
+
+Memory addressing relates to both the applications running on your PC and the PC itself. Let me explain:
+
+PC Memory Addressing: Your PC has physical memory, often referred to as RAM (Random Access Memory). This memory is used by the operating system and applications to store and access data during runtime. When we talk about memory addressing at the PC level, we're referring to how the CPU interacts with this physical memory. The CPU needs a way to access specific locations in memory to read or write data. Memory addressing is the system that allows the CPU to do this.
+
+Application Memory Addressing: When you run an application on your PC, it gets allocated a portion of this physical memory to work with. This allocation is managed by the operating system. The application, in turn, needs a way to access this allocated memory to store variables, execute code, and perform various tasks. Memory addressing at the application level refers to how the application interacts with the memory allocated to it by the operating system.
+
+In the context of a 32-bit process, we're primarily discussing application memory addressing. A 32-bit process can only access up to 4 gigabytes of memory, regardless of how much physical memory (RAM) your PC has. This limitation is due to the 32-bit memory addressing scheme used by the process. However, the PC itself may have more physical memory, but each individual 32-bit process is limited to addressing only 4 gigabytes of it at a time.
