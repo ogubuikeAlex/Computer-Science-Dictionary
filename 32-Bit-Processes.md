@@ -38,3 +38,9 @@ System Resources: The operating system takes into account the available system r
 Operating System Policies: Some operating systems have policies or settings that influence memory allocation. For example, a system administrator may configure limits on how much memory a particular user or application can consume to prevent one application from monopolizing system resources.
 
 32-bit vs. 64-bit: As mentioned earlier, in a 32-bit system, each individual process is typically limited to 4 gigabytes of memory. In a 64-bit system, processes can potentially access much larger amounts of memory, depending on the system's hardware and operating system settings.
+
+## 32-bit processes can allocate a maximum of 2GB of virtual user-mode memory on 32-bit systems, and 4GB of virtual user-mode memory on 64-bit systems. What does this mean?
+
+In 32-bit systems, a 32-bit process can typically allocate a maximum of 2 gigabytes (GB) of virtual user-mode memory. This limitation arises from the memory addressing constraints of a 32-bit system, where each process is typically limited to a 4 GB virtual address space, but half of it is reserved for the kernel, leaving only 2 GB for user-mode memory.
+
+However, on 64-bit systems, such as those running a 64-bit version of Windows or Linux, a 32-bit process can usually allocate up to 4 GB of virtual user-mode memory. This is because 64-bit systems can provide a larger virtual address space, allowing each process to potentially access more memory.
