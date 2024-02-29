@@ -22,3 +22,17 @@ When you run an application on your PC, it gets allocated a portion of this phys
 
 #### 📲 SO?
 In the context of a 32-bit process, we're primarily discussing application memory addressing. A 32-bit process can only access up to 4 gigabytes of memory, regardless of how much physical memory (RAM) your PC has. This limitation is due to the 32-bit memory addressing scheme used by the process. However, the PC itself may have more physical memory, but each individual 32-bit process is limited to addressing only 4 gigabytes of it at a time.
+
+## The memory allocated to the application is it dependent on the how much the application needs, or are all applications given the same memory allocation?
+
+The memory allocated to an application is typically dependent on how much the application needs, within the constraints of the system's available resources and any limitations imposed by the operating system.
+
+When you run an application on your PC, the operating system is responsible for managing the allocation of memory to that application. The amount of memory allocated to an application can vary based on factors such as:
+
+Application Requirements: The operating system allocates memory based on the needs of the application. For example, a simple text editor may require less memory compared to a video editing software or a complex video game.
+
+System Resources: The operating system takes into account the available system resources, including the amount of physical memory (RAM) installed on the system. If there is plenty of available memory, the operating system can allocate more memory to applications as needed. However, if memory is limited or if other applications are already using a significant portion of the available memory, the operating system may allocate a smaller amount of memory to a new application.
+
+Operating System Policies: Some operating systems have policies or settings that influence memory allocation. For example, a system administrator may configure limits on how much memory a particular user or application can consume to prevent one application from monopolizing system resources.
+
+32-bit vs. 64-bit: As mentioned earlier, in a 32-bit system, each individual process is typically limited to 4 gigabytes of memory. In a 64-bit system, processes can potentially access much larger amounts of memory, depending on the system's hardware and operating system settings.
