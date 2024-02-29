@@ -25,6 +25,8 @@ In the context of a 32-bit process, we're primarily discussing application memor
 
 ## The memory allocated to the application is it dependent on the how much the application needs, or are all applications given the same memory allocation?
 
+*_Short answer: Applications are not typically given a fixed, uniform memory allocation; rather, the operating system dynamically manages memory allocation based on various factors.*_
+
 The memory allocated to an application is typically dependent on how much the application needs, within the constraints of the system's available resources and any limitations imposed by the operating system.
 
 When you run an application on your PC, the operating system is responsible for managing the allocation of memory to that application. The amount of memory allocated to an application can vary based on factors such as:
