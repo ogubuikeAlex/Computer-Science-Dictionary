@@ -1,0 +1,11 @@
+# What Does 32-bit process mean?
+
+In computing, a 32-bit process refers to a program or application that operates within the constraints of a 32-bit memory addressing scheme. This means that the process can access up to 2^32 (4,294,967,296) memory addresses, which equates to 4 gigabytes of memory.
+
+To understand this concept better, think of memory addressing like a street address system in a city. In a 32-bit addressing scheme, each memory location is assigned a unique address, similar to how each building on a street has its own address. With 32 bits, the system can create up to 4,294,967,296 unique addresses.
+
+Now, when we say a process is 32-bit, it means that it can only utilize these 32-bit addresses to access memory. Therefore, regardless of how much physical RAM (Random Access Memory) your computer has, a 32-bit process can only utilize up to 4 gigabytes of memory at a time. This limitation can impact the performance and capabilities of the application, especially on systems with large amounts of RAM.
+
+On the other hand, a 64-bit process operates within a 64-bit memory addressing scheme, allowing it to access a significantly larger amount of memory, up to 2^64 addresses (which is a massive amount, virtually unlimited for current practical purposes). This makes 64-bit processes more suitable for handling large datasets and performing memory-intensive tasks efficiently.
+
+To sum up, when you encounter the term "32-bit process," it refers to an application or program that can only access up to 4 gigabytes of memory due to its use of a 32-bit memory addressing scheme.
