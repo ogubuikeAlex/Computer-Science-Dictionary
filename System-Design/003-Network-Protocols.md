@@ -15,3 +15,52 @@ As long as the connection is alive, the two machines can exchange data.
 TCP solved the IP issue but was still inefficient in really catering for our growing data manipulation and transfer needs.That was how HTTP was birth
 
 HTTP: Hypertext transfer protocol introduced the request-response model, where a machine sends a request and the other machine receives the request and sends a response. TBC with (Q and A) 
+
+
+## FAQs
+### At what point does a mchine get issued an IP address
+
+A machine is issued an IP address during the process of network configuration, typically when it connects to a network. Here’s how it usually happens:
+
+- Boot-Up/Network Connection:
+
+ When a machine (like a computer, smartphone, or any networked device) is powered on or connects to a network, it begins the process of obtaining an IP address.
+- DHCP (Dynamic Host Configuration Protocol):
+
+ - Most networks use DHCP to automatically assign IP addresses. When the machine connects to the network, it sends a DHCP request, asking for an IP address.
+ - The DHCP server on the network receives this request and assigns an available IP address to the machine from a pool of IP addresses. This address is typically leased to the device for a specific period.
+- Static IP Assignment (if applicable):
+
+ - Alternatively, if the machine is configured with a static IP address, it doesn’t go through the DHCP process. Instead, it uses the pre-assigned IP address every time it connects to the network.
+- IP Address Issued:
+
+ - Once the IP address is assigned, either through DHCP or a static assignment, the machine can communicate with other devices on the network or access the internet, depending on the network configuration.
+
+ ### Can a server have multiple ports?
+ Yes, a server can have multiple ports, and this is actually very common. Here's how it works:
+
+#### Understanding Ports
+- Ports are logical endpoints on a server used to distinguish between different types of network services. Each port is identified by a number, ranging from 0 to 65535.
+- IP Address + Port: When a client connects to a server, it connects to a specific IP address and port combination (e.g., 192.168.1.1:80).
+#### Multiple Ports on a Server
+- Multiple Services: A single server can host multiple services, each running on a different port. For example:
+
+  - Port 80 for HTTP (web server)
+  - Port 443 for HTTPS (secure web server)
+  - Port 22 for SSH (secure shell)
+  - Port 25 for SMTP (email server)
+  - Port 3306 for MySQL (database server)
+- Same Service, Different Ports: Sometimes, the same service might be available on different ports. For instance, a web server might listen on both port 80 (HTTP) and port 8080 (for alternative access).
+
+- Load Balancing and Redundancy: In high-availability setups, multiple instances of the same service might run on different ports for load balancing or redundancy.
+
+- Custom Services: Developers might create custom services that listen on non-standard ports, which are not typically used by well-known services.
+
+#### Example
+Imagine a server hosting a website, an email server, and an SSH service:
+
+- Port 80: Handles incoming web traffic via HTTP.
+- Port 443: Handles secure web traffic via HTTPS.
+- Port 22: Handles SSH connections for remote server management.
+- Port 25: Handles incoming email traffic via SMTP.
+In this setup, the server is using multiple ports to manage different types of network traffic simultaneously.
