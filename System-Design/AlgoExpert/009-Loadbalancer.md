@@ -1,5 +1,5 @@
 ## What is a LoadBalancer?
-A load balancer is a web server that manages traffic sent to servers in away that balances out the throughput of the system so every server is alloted the amount of traffic that it can handle efficiently.
+A load balancer is a web server (A type of reverse proxy) that manages traffic sent to servers in away that balances out the throughput of the system so every server is alloted the amount of traffic that it can handle efficiently.
 
 ## Examples of Possibles Places You can Find A LoadBalancer?
 Basically anywhere you see a client - server model. This can be between clients and servers, between servers and servers and between servers and databases etc.
@@ -21,6 +21,10 @@ This is when the load balancer sends routes based on the particular source IP of
 
 - **Path Based Selection Strategy:**
 This when the server are selected based on requested path. For example "/users" is routed to server A and "/courses" is routed to server B.
+
+- **Random Selection:** Just Wing It
+
+- **Performance Based Selection:** The load balancer is continually check the performance and health of the serves and based on its findings, it routes traffic to servers that have the potential to best manage traffic.
 
 
 ## Combining Server Selection Strategies 
