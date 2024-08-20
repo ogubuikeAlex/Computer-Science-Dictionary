@@ -39,3 +39,8 @@ There are various techniques involved in removing data. The technique you use wi
 - FIFO: First In First Out Policy - When removing items from the cache, the first item we stored should be removed first
 - LIFO: Last In First Out Policy - When removing items from the cache, the last item we stored should be removed first
 - Randomly -> 🫵🏽
+
+- What is a cache miss and a cache hit?
+Cache Miss Is When Requested Data is found in the Cache
+
+Cache miss is when requested data could have been found in the cache but wasn't found. This is typically caused by by a system failure or a poor design choice. For example, if the server goes down, our load balancer wll have to forward requests to a new server which will result in cache misses
