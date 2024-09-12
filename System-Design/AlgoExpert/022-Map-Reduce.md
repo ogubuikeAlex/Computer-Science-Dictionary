@@ -37,3 +37,7 @@ Different DFS implementation have slightly different APIs and semantics, but the
 - The model also focuses on being fault tolerant. In the event of a network partition or interruption, when the system has stabilized the central control plane will re-perform the map to include the data from the machine that was disconnected.
 - We almost always require that the Map  and Reduce functions are independently Idempotent
 - What we care the most about are the input of the map, the output of the map, the map function itself, the input of the reduce function and the output of the reduce function
+
+
+Dear Alex
+ Do Not Forget To Add A Code Sample To This
