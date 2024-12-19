@@ -19,7 +19,7 @@ There are two major types of caching
 This is a type of caching where during write operations we update the cache and the main database simultaneously. With this technique
 it is easier to assure that we have coherent data. One of the issue with it is that write operations would typically take more time and might even increase latency
 - Write Back:
-In this type of caching we only update the cache during write operations and then we set up a mechanism that periodically updates the main database. While this is faster, it means that the main data store will mostly be out of sync with data changes. As much as we have a mechanism to periodically update the main data store, it would be a big issue if something happens to the cache before the date is moved to the main data store
+In this type of caching we only update the cache during write operations and then we set up a mechanism that periodically updates the main database. While this is faster, it means that the main data store will mostly be out of sync with data changes. As much as we have a mechanism to periodically update the main data store, it would be a big issue if something happens to the cache before the data is moved to the main data store
 
 ## What Is Staleness In Caching
 Staleness is a situation where the data retrieved from a cache is not the most updated version stored on the main data store.
@@ -34,13 +34,35 @@ Caching is super important but can also be dicey. If you must use caching, then:
 
 ## Eviction Policies
 There are various techniques involved in removing data. The technique you use will be determined largely by the system you are designing:
-- LRU: Least Recently Used Policy - When removing items from the cache, remove the data that has not been used recently
-- LFU: Least frequently Used Policy - When removing items from the cache, remove the data that was least frequently used by the system
+- LRU: Least Recently Used Policy - When removing items from the cache, remove the data that has not been used recently.
+Use Case: A cache for data that is accessed irregularly but with a likelihood of reuse.
+
+Example: A web browser cache where pages visited less recently are evicted first. This ensures frequently visited pages remain in the cache, enhancing the browsing experience.
+- LFU: Least frequently Used Policy - When removing items from the cache, remove the data that was least frequently used by the system. 
+
+Use Case: A cache for data where access frequency is a key indicator of value.
+
+Example: In a database query cache, where certain queries are run more frequently. LFU eviction ensures that less frequently accessed queries are evicted, maintaining the cache for queries that are accessed more often.
 - FIFO: First In First Out Policy - When removing items from the cache, the first item we stored should be removed first
-- LIFO: Last In First Out Policy - When removing items from the cache, the last item we stored should be removed first
-- Randomly -> 🫵🏽
+Use Case: A cache for sequentially accessed data.
 
-- What is a cache miss and a cache hit?
-Cache Miss Is When Requested Data is found in the Cache
+Example: Consider a video streaming service where users typically watch a series of episodes in order. Using FIFO, the episodes first cached would be evicted first, which aligns with the user's viewing pattern.
+- LIFO: Last In First Out Policy - When removing items from the cache, the last item we stored should be removed first.
 
-Cache miss is when requested data could have been found in the cache but wasn't found. This is typically caused by by a system failure or a poor design choice. For example, if the server goes down, our load balancer wll have to forward requests to a new server which will result in cache misses
+Use Case: A stack-based cache for temporary storage of tasks.
+
+Example: In a task management system, where recently added tasks are accessed and completed first. LIFO eviction would remove the most recently added task first, which mirrors the user behavior in certain stack-based operations.
+
+- Random Replacement Policy -> 🫵🏽items are evicted from the cache at random when space is needed for new entries.
+
+Random Replacement can be useful in scenarios where the overhead of more sophisticated policies is not justified, or where the access patterns are highly unpredictable and do not benefit from more complex eviction strategies
+
+## What is a cache miss and a cache hit?
+Cache Hit Is When Requested Data is found in the Cache
+
+Cache miss is when requested data could have been found in the cache but wasn't found. This is typically caused by a system failure or a poor design choice. For example, if the server goes down, our load balancer wll have to forward requests to a new server which will result in cache misses
+
+### Content Delivery Network
+A CDN is a third-party service that acts like a cache for your servers. Sometimes, web applications can be slow for users in a particular region if your servers are located only in another region. 
+
+A CDN has servers all around the world, meaning that the latency to a CDN's server will almost always be far better than the latency to your servers. A CDN's server are often referred to as PoPs (Points of Presence). Two of the most popular CDNs are Cloudflare and Google Cloud CDN.
