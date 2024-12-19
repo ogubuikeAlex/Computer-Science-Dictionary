@@ -1,6 +1,7 @@
 ## What is Availability?
 How resistant a system is to failure i.e the fault tolerance of a system. 
-It is also the percentage of time in a year when the system is operational.
+Also its ability to remain operational over time.
+We can also say, it is the percentage of time in a year when the system is operational.
 
 ## How Do We Measure Availability?
 Even though availability is a measure of uptime, 

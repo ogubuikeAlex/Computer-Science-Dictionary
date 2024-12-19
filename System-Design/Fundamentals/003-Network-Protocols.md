@@ -1,6 +1,6 @@
 Network protocols represent the various ways machines interact, how information is transmitted, etc.
 
-A network protocol will typically cover everything that involves smooth and complete communication between mac/machines.
+A network protocol will typically cover everything that involves smooth and complete communication between machines.
 Some examples of network protocols:
 
 IP: Internet protocol is the oldest protocol and is generally how the internet was built. It sends information in packets. Each packet has a head and a payload/data section. The Head represents the packet information and the payload represents the data being transmitted.
@@ -12,13 +12,13 @@ This was worrisome because, they was no way to ensure that every single packet w
 TCP: Transmission control protocol was built on top of IP. Its sole aim was to solve the problems associated with IP. It had a mechanism to ensure that the packets would arrive in the right order. It had error reporting system to signify the sender machine when a packet was not delivered successfully, etc.
 TCP connections happened typically via something called a handshake. The sender will send a couple of packets to the receiver to inform it that it wants to connect. The receiver would send a response if it agrees and then the sender will send a final message to finalize making the connection "Alive". 
 As long as the connection is alive, the two machines can exchange data.
-TCP solved the IP issue but was still inefficient in really catering for our growing data manipulation and transfer needs.That was how HTTP was birth
+TCP solved the IP issue but was still inefficient in really catering for our growing data manipulation and transfer needs.That was how HTTP was born
 
 HTTP: Hypertext transfer protocol introduced the request-response model, where a machine sends a request and the other machine receives the request and sends a response. TBC with (Q and A) 
 
 
 ## FAQs
-### At what point does a mchine get issued an IP address
+### At what point does a machine get issued an IP address
 
 A machine is issued an IP address during the process of network configuration, typically when it connects to a network. Here’s how it usually happens:
 
@@ -42,6 +42,19 @@ A machine is issued an IP address during the process of network configuration, t
 #### Understanding Ports
 - Ports are logical endpoints on a server used to distinguish between different types of network services. Each port is identified by a number, ranging from 0 to 65535.
 - IP Address + Port: When a client connects to a server, it connects to a specific IP address and port combination (e.g., 192.168.1.1:80).
+
+#### What happens if I use a Number larger than 65535 as a port?
+Ports are indeed identified by numbers ranging from 0 to 65535, as they are represented using a 16-bit unsigned integer. This allows for 2^16 (65536) possible values, but since numbering starts from 0, the highest possible port number is 65535.
+
+If you attempt to use port number 65536, you'll encounter an error because it exceeds the valid range. Operating systems and networking protocols will not recognize port 65536 as valid, and it will be rejected when used in configurations or programming.
+
+For context:
+- **Valid port numbers**: 0 to 65535
+- **Common uses**:
+  - Ports 0-1023: **Well-known ports** for common services (e.g., HTTP on port 80, HTTPS on port 443).
+  - Ports 1024-49151: **Registered ports** for user processes or applications.
+  - Ports 49152-65535: **Dynamic or private ports** for temporary purposes, often used in client-server communications.
+
 #### Multiple Ports on a Server
 - Multiple Services: A single server can host multiple services, each running on a different port. For example:
 

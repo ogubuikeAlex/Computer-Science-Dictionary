@@ -1,6 +1,6 @@
 ## What is Latency?
 
-Latency represents the time it takes data to flow from oue point in a system to another point in the system. For example how long it takes for a client to send data to a server and receive a response from the server.
+Latency represents the time it takes data to flow from one point in a system to another point in the system. For example how long it takes for a client to send data to a server and receive a response from the server.
 
 If a system has a high latency it means it will lag a lot. Applications like video streaming platforms, multiplayer video games etc need real time updates and so they require low latency.
 
@@ -13,11 +13,9 @@ For example,
 This value is way higher when we talk about Network calls like API requests.
 Making an API call from a local client to a local server both running on my PC will have a lower latency than when I make an API call from a client in California and a server in Netherlands.
 
-
 ## What Is Throughput?
 
 Throughput is the amount of work a machine can do per unit time. For example, the amount of network request a server can receive or respond to per second is measured as request per second.
-
 
 ## What is The Relationship Between Latency and Throughput?
 

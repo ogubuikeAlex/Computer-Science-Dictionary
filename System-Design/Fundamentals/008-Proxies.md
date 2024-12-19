@@ -17,7 +17,7 @@ A reverse proxy is a web server that acts on behalf of the server.
 
 The entity that owns the client will configure the forward proxy on their end. When a request is made from the client,the request is routed to the proxy. Then the proxy reroutes the request to the server acting as the source of the request. 
 
-Even though they are some reverse proxies that will still send the IP of the original source of the request, typically the IP will send its information and make the server believe it is the source. THis means that to the server, it is interacting with just one client. So it will simply send the response back to the forward proxy and life continues.
+Even though they are some forward proxies that will still send the IP of the original source of the request, typically the proxy will send its own information and make the server believe it is the source. This means that to the server, it is interacting with just one client. So it will simply send the response back to the forward proxy and life continues.
 
 - Reverse Proxy: A reverse proxy is used when serves does not want clients to interact directly with it. This can be for a lot of reasons security, optimization, load balancing, caching etc.
 
@@ -28,5 +28,3 @@ This is because, when the DNS query is made, the IP address returned for a syste
 The reverse proxy will receive the request and based on certain criteria, it could either route the request to the actual server, send a cached response, or just return an error message.
 
 In the scenario where the reverse proxy actually sends the request to the server. The server will then send a response to the reverse proxy and the reverse proxy will send back the response to the client and the flow is completed.
-
-
