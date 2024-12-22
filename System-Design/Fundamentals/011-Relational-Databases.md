@@ -88,6 +88,8 @@ A database index is a data structure that improves the speed of data retrieval o
    - Determines the physical order of data in the table.
    - Only one clustered index can be created per table, as it defines how data is stored.
 
+## Question: If this determines the physical state of the table, does it mean it is created automatically? if one is created automatically what happens when I create another one, does it move?
+
 4. **Non-Clustered Index**:
    - Does not alter the physical order of data in the table.
    - Can have multiple non-clustered indexes on a table to support various queries
