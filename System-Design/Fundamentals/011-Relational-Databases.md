@@ -111,7 +111,7 @@ Indexes are a powerful tool to optimize database performance, especially for rea
 
 Eventual Consistency: A system that guarantees that they will eventually be coherence in the data returned. This means that they is a possibility of getting stale data,but eventually everything will reflect correctly.
 
-String Consistency: 
+## What Is The CAP Theorem? 
 
 ### Eventual Consistency
 
