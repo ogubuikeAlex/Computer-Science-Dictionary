@@ -1,5 +1,5 @@
 ## What is hashing?
-Hashing is the process is converting an arbitrary amount of data into a fixed sized data.
+Hashing is the process of converting an arbitrary amount of data into a fixed sized data.
 
 ## Where does hashing come in system Design?
 Imagine if we have a system that has multiple clients and servers and we are potentially suffering from missing cache hits because we have servers that have in-memory caches. We could decide to make this better by having a loadBalancer that is smart enough to know where exactly to route requests to.
@@ -77,7 +77,9 @@ Or, using an offset:
 - **Server 2**: 2.1
 
 ### Q1-B: This method of adding virtual nodes does not solve the problem of overloading one node in a situation where the other nodes are offline or unavailable. Does that not make it inefficient?
-Yes! While virtual nodes help distribute load more evenly under normal conditions, they may not fully address the issue of overloading when some nodes go offline. To enhance the system's resilience and ensure efficiency, additional strategies can be employed:
+Yes! While virtual nodes help distribute load more evenly under normal conditions, they may not fully address the issue of overloading when some nodes go offline.
+
+To enhance the system's resilience and ensure efficiency, additional strategies can be employed:
 
 ##### 1. **Dynamic Rebalancing**
 - **Automatic Rebalancing**: Implement mechanisms to automatically redistribute data and load when nodes go offline. This can involve temporarily increasing the number of virtual nodes for the remaining active servers to spread the load.
