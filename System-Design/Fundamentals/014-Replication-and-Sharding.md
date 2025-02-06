@@ -6,7 +6,7 @@ The question now is how do we put up with data inconsistency because its bad to 
 At this point, we would have to have trade-offs based on the system we are building. We would think out the most important character our system needs to best serve our clients. 
 
 ### How can we improve latency using replication?
-Imagine a company that serves users in different parts of the wold, we can have database replicas assigned per location. 
+Imagine a company that serves users in different parts of the world, we can have database replicas assigned per location. 
 
 For example if i make an update from Nigeria, everyone in my location will have access to read that information fast (Lower Latency), then at a specific time interval (say 5 mins) the database will speak to a particular master database to sync up data - send information for update that has happened from its own location and receive information from other locations. 
 
