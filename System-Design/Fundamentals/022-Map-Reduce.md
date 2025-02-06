@@ -1,6 +1,6 @@
 ## History Of MapReduce:
 
-Google was challenged with processing really large datasets in a distributed system in th early 2000. 
+Google was challenged with processing really large datasets in a distributed system in the early 2000. 
 in 2004, two of google engineers came up with MapReduce model.
 
 
@@ -16,16 +16,16 @@ The premise was splitting the process into two steps
 This is a popular framework for processing very large datasets in a distributed setting efficiently, quickly and in a fault tolerant manner. A mapReduce is composed of 3 main steps:
 - The Map step which runs a map function on the various chunks of the dataset and transforms these chunks into intermediate key-value pairs
 - The Shuffle step which reorganizes the intermediate key-value pairs such that pairs of the same key are routed to the same machine in the final step
-- The Reduce step which ruins a reduce function on the newly shuffled key-value pairs and transform them into more meaningful data
+- The Reduce step which runs a reduce function on the newly shuffled key-value pairs and transform them into more meaningful data
 
-The canonical example of a mapReduce use case is counting the number of occurrences of words iin a large text file.
+The canonical example of a mapReduce use case is counting the number of occurrences of words in a large text file.
 
-When dealing with a MapReduce library, engineers system administrators only need to worry about the map and reduce functions as well as their input and outputs. All other concern including the parallelization of tasks and the fault tolerance if the MapReduce job are abstracted away and taken care of by the MapReduce Implementation.
+When dealing with a MapReduce library, engineers and system administrators only need to worry about the map and reduce functions as well as their input and outputs. All other concern including the parallelization of tasks and the fault tolerance of the MapReduce job are abstracted away and taken care of by the MapReduce Implementation.
 
 ## What is a Distributed File System
-A Distributed File System is an abstraction over a cluster of machines that allows them tpo act like one large file system. The two most popular implementations of the DFS are the google file system and the Hadoop Distributed File System.
+A Distributed File System is an abstraction over a cluster of machines that allows them to act like one large file system. The two most popular implementations of the DFS are the google file system and the Hadoop Distributed File System.
 
-Typically DFS take care of the classic availability and replication guarantees that can be tricky to obtain in a distributed-system setting. The overarching idea is that files are split into chunks of certain size (4MB or 64MB for instance) and those chunks undergo data sharding across a large cluster of machines. A central control plane is in charge of deciding where each chink resides, routing reads top the right nodes, and handling communication between machines.
+Typically DFS take care of the classic availability and replication guarantees that can be tricky to obtain in a distributed-system setting. The overarching idea is that files are split into chunks of certain size (4MB or 64MB for instance) and those chunks undergo data sharding across a large cluster of machines. A central control plane is in charge of deciding where each chunk resides, routing reads to the right nodes, and handling communication between machines.
 
 Different DFS implementation have slightly different APIs and semantics, but they achieve the same common goal: extremely large scale persistent storage.
 
