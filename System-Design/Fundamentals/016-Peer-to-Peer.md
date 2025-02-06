@@ -1,4 +1,4 @@
-What is a peer-to-peer newok
+What is a peer-to-peer network
 
 A p2p network is a collection of machines referred to as peers that divide a workload between themselves to presumably complete the workload faster than would otherwise be possible.
 
