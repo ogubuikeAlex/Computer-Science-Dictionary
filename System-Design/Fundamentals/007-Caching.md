@@ -60,7 +60,7 @@ Random Replacement can be useful in scenarios where the overhead of more sophist
 ## What is a cache miss and a cache hit?
 Cache Hit Is When Requested Data is found in the Cache
 
-Cache miss is when requested data could have been found in the cache but wasn't found. This is typically caused by a system failure or a poor design choice. For example, if the server goes down, our load balancer wll have to forward requests to a new server which will result in cache misses
+Cache miss is when requested data could have been found in the cache but wasn't found. This is typically caused by a system failure or a poor design choice. For example, if the server goes down, our load balancer will have to forward requests to a new server which will result in cache misses.
 
 ### Content Delivery Network
 A CDN is a third-party service that acts like a cache for your servers. Sometimes, web applications can be slow for users in a particular region if your servers are located only in another region. 
