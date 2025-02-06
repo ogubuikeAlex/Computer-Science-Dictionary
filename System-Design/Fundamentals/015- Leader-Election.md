@@ -1,7 +1,7 @@
 ## What is leader election?
 Imagine a product that helps  users track their friends and also allows them save periodically so that when its time to get a friend a gift, they can alway just have money to spare. We have a db for storing user personal and payment information. We also have a third party integration for us to be able to collect funds from users.
 
-This service needs information from your database to be able to serve you well. For security reasons, you decide to  ensure that the third part service does not interact with the DB directly. Instead we have a Service between the DB and the third party service. 
+This service needs information from your database to be able to serve you well. For security reasons, you decide to  ensure that the third party service does not interact with the DB directly. Instead we have a Service between the DB and the third party service. 
 
 This service will essentially be able to pull information from the database and periodically send a message to the third-party notifying it of when to deduct funds from a user.
 
@@ -19,7 +19,7 @@ A leader election is a system employed in a distributed system, where a group of
 
 The other servers are called followers and they wait in anticipation for when the current lead would become unavailable and once this happens a new election happens.
 
-The difficult part of this is ensuring consistency in state (state asin info for who the leader is)across all the different machines. 
+The difficult part of this is ensuring consistency in state (state as in info for who the leader is at a point in time) across all the different machines. 
 
 This can be achieved using consensus mechanisms that usually involves complex mathematical calculations. Example of consensus mechanisms are Paxos or Raft.
 
@@ -29,7 +29,7 @@ Due to how complex the consensus mechanisms are we simply use services that have
 
 For ETCD, the way we would implement this is to make our servers interact with ETCD in such a way that even though they are all connected only one of them is stored as the leader in ETCD, For context ETCD is a key-value store which is highly available thanks to its underlying implementation of the raft consensus mechanism. 
 
-This means that the server that us considered to be the leader will be stored as a key-value pair on ETCD and to swap that value  we can use he ETCD structure to swap that value securely
+This means that the server that is considered to be the leader will be stored as a key-value pair on ETCD and to swap that value  we can use the ETCD structure to swap that value securely
 
 ## Potential Flow For A Leader Election Using ETCD:
 - We have different servers with the same code 
