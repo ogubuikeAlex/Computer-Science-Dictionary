@@ -1,4 +1,6 @@
 ## What is Availability?
+The percentage of time a system is operational and accessible, allowing data to be accessed. High availability systems minimize service interruptions by ensuring systems are always accessible. 
+
 How resistant a system is to failure i.e the fault tolerance of a system. 
 Also its ability to remain operational over time.
 We can also say, it is the percentage of time in a year when the system is operational.
