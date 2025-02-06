@@ -13,7 +13,7 @@ Solid question!
 They are different server selection strategy employed by LoadBalancers:
 - **Round Robin Selection Strategy:** For instance in a system with 5 servers, say A - E. The load balancer that employs this strategy will route traffic in a sequential manner. So first to A, then to B, then to C, then to D, then to E and Then back to A again.
 
-- **Weighted Round Robin Selection Strategy:** This is still the Round Robin selection strategy but with a twist. Each server is also given a weight which represents the frequency of traffic that it can handle. For example, say we have 5 servers, labelled A - C. Say Server A is given a weight of 1,Server B is given a weight of 3 and Server C  is given a weight of 1. 
+- **Weighted Round Robin Selection Strategy:** This is still the Round Robin selection strategy but with a twist. Each server is also given a weight which represents the frequency of traffic that it can handle. For example, say we have 3 servers, labelled A - C. Say Server A is given a weight of 1,Server B is given a weight of 3 and Server C  is given a weight of 1. 
 The first request will get to server A because it is the first server in the system. Then the second request will get to server B. But since server B has a weight of 3, the next couple of requests coming in will still be routed to server B before the load balancer moves to server C. What this essentially means is that the load balancer will be route more requests to the server with the higher weight.
 
 - **IP Based Selection Strategy:** 
@@ -35,7 +35,7 @@ So this means we should potentially have more than one load balancer to manage t
 The question now is, is there a way we can combine multiple server selection strategies? Yes
 
 What we could do is to have two layers of load balancers
-- Layer one Load balancer receive requests based on IPs and route to layer two load balancers
+- Layer one Load balancer receive requests based on geolocation and IPs and route to layer two load balancers
 - This set of load balancers receive the request and then they use the round robin server selection strategy.
 
 ## What is a DNS Round Robin
