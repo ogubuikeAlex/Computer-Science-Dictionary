@@ -130,6 +130,11 @@ After updating the document, we will set it up by running:
 systemctl enable running
 ```
 
+To disable use:
+```bash
+systemctl disable running
+```
+
 Q: What is WantedBy? What is multi user target run level? Is there a way to order the sections?
 
 We can also add meta data like description to allow others understand what the service is about. this is done under the Unit section:
