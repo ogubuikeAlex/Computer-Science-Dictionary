@@ -13,7 +13,7 @@ The client-server architecture basically shows the relationship between a server
 
 A client exists on its own and can interact with multiple servers and a client does not know the exact server it is interacting with.
 
-When I go and put in [codetivite.org](http://Codetivite.org) in my browser.
+When I go and put in [codetivite.org](http://www.codetivite.org) in my browser.
 
 I am trying to view the files that make up codetivite website. These files are stored in a data storage that the client doesn’t know. But the server actually has the information of the data storage and even how to get the information.
 
